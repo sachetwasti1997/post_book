@@ -1,0 +1,1 @@
+export const errorModal = "error-modal"
