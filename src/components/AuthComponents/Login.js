@@ -5,6 +5,7 @@ import {selectModalAction} from "../../actions/selectModalAction";
 import {errorModal} from "../../config/modalNames";
 import {useDispatch, useSelector} from "react-redux";
 import {login} from "../../actions/AuthActions/login";
+import {Link} from "react-router-dom";
 
 const Login = () => {
 
@@ -55,7 +56,12 @@ const Login = () => {
                     <Form.Control type={"password"} placeholder={"Please type your Password again"} onChange={handlePasswordChange}/>
                 </Form.Group>
             </div>
-            <Button variant={isFormFilled() === true?"primary":"secondary"} onClick={isFormFilled() === true?loginClick:null} disabled={storedState.isLoading}>
+            <Button
+                variant={isFormFilled() === true?"primary":"secondary"}
+                onClick={isFormFilled() === true?loginClick:null}
+                disabled={storedState.isLoading}
+                style={{marginRight: '10px'}}
+            >
                 {storedState.isLoginLoading &&
                 <Spinner animation="border" role="status" size={"sm"}>
                     <span className="sr-only">Loading...</span>

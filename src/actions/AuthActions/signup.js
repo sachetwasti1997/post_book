@@ -8,7 +8,7 @@ export const signup = (userCredentials) => async (dispatch) => {
     dispatch(isLoading(true))
     await Axios.post(`/user/api/1.0/signup`, userCredentials)
         .then(res => {
-            dispatch({type:'REGISTER_USER', payload: res.data})
+            dispatch({type:'LOGGED_IN', payload: res.data})
             dispatch(isLoading(false))
         })
         .catch(err => {

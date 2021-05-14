@@ -3,6 +3,7 @@ import Modal from "./components/modal/Modal";
 import {useDispatch, useSelector} from "react-redux";
 import {selectModalAction} from "./actions/selectModalAction";
 import Login from "./components/AuthComponents/Login";
+import MainScreen from "./components/MainScreen";
 
 const App = () => {
 
@@ -16,9 +17,10 @@ const App = () => {
     dispatch(selectModalAction(null))
   }
   return (
-      <div className="App">
-        <UserSignUpComponent/>
-        <Login/>
+      <div>
+        {/*<UserSignUpComponent/>*/}
+        {/*<Login/>*/}
+          <MainScreen/>
         <Modal
             closeModal={close}
         />

@@ -5,6 +5,8 @@ import {selectModalReducer} from "./modalReducers/selectModalReducer";
 import {isLoading} from "./extras/isLoading";
 import {logIn} from "./authReducers/logIn";
 import {isLoginLoading} from "./extras/isLoginLoading";
+import {userDetails} from "./userDetails";
+import {isUserDetailsFetched} from "./isUserDetailsFetched";
 
 export default combineReducers({
     signUp,
@@ -12,5 +14,7 @@ export default combineReducers({
     selectModalReducer,
     logIn,
     isLoading,
-    isLoginLoading
+    isLoginLoading,
+    userDetails,
+    isUserDetailsFetched
 })
