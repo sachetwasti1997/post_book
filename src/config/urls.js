@@ -1,0 +1,1 @@
+export const API_GET_USERS = "/user/api/1.0/users"

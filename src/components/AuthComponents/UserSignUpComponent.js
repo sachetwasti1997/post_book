@@ -1,9 +1,8 @@
 import React, {useState} from "react";
-import {Button, Container, Form, Spinner} from "react-bootstrap";
+import {Button, Card, Container, Form, Spinner} from "react-bootstrap";
 import {useDispatch, useSelector} from 'react-redux';
 import {errorModal} from "../../config/modalNames";
 import {selectModalAction} from "../../actions/selectModalAction";
-import {signUpMessage} from "../../actions/signUpMessage";
 import {errorAction} from "../../actions/Error/errorAction";
 import {signup} from "../../actions/AuthActions/signup";
 
@@ -66,6 +65,17 @@ const UserSignUpComponent = () => {
     }
 
     return(
+        <Card
+            bg={"primary"}
+            style={{
+                marginTop: '8%',
+                width: '60%',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                padding: '30px',
+                boxShadow: '5px 5px 5px 5px grey'
+            }}
+        >
         <Container>
             <h1>Sign Up</h1>
             <div style={{textAlign: 'left'}}>
@@ -100,6 +110,7 @@ const UserSignUpComponent = () => {
                 Sign Up
             </Button>
         </Container>
+        </Card>
     );
 
 }

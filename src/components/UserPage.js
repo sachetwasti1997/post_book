@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
-import {Container} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import {userDetails} from "../actions/userDetails";
 import {isUserDetails} from "../actions/isUserDetails";
+import ProfileCard from "./ProfileCard";
 
 const UserPage = () => {
 
@@ -15,17 +15,28 @@ const UserPage = () => {
     useEffect(() => {
         if (!storedStates.isUserDetailsFetched){
             const token = storedStates.logIn["jsonWebToken"]
-            console.log(token)
             dispatch(userDetails(token))
             dispatch(isUserDetails())
         }
     })
 
-    return( <React.Fragment>
-                <h1>
-                    UserPage
-                </h1>
+    let userName, userDisplayName, image;
+
+    if (storedStates.userDetails){
+        userName = storedStates.userDetails.userName
+        userDisplayName = storedStates.userDetails.displayName
+        image = storedStates.userDetails.image
+    }
+
+    return(
+        <React.Fragment>
+            <React.Fragment>
+                <ProfileCard
+                    userName={userName ? userName:"No User"}
+                    displayName={userDisplayName ? userDisplayName:"No User"}
+                    image={image}/>
             </React.Fragment>
+        </React.Fragment>
     )
 }
 

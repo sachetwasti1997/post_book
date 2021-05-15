@@ -1,5 +1,4 @@
 import Axios from 'axios';
-import {url} from '../../config/initVariables'
 import {errorModal} from "../../config/modalNames";
 import {isLoading} from "../isLoading";
 

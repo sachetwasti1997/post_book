@@ -1,6 +1,6 @@
-export const userDetails = (user = null, action) => {
+export const selectedUser = (user = null, action) => {
     switch (action.type) {
-        case "USER_DETAILS":
+        case "SELECTED_USER":
             return action.payload
         default:
             return user

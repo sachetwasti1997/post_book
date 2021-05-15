@@ -1,7 +1,6 @@
 import React from "react";
 import {Switch} from "react-router-dom";
 import NavNonLogged from "./navComp/NavNonLogged";
-import {Container} from "react-bootstrap";
 
 const NonLoggedInComponent = ({routes}) => {
     return (
